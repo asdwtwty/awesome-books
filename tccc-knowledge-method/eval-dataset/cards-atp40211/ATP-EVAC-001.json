@@ -1,0 +1,79 @@
+{
+  "card_id": "ATP-EVAC-001",
+  "title": "陆军伤员撤运四级分类: Urgent / Priority / Routine / RTD",
+  "version": "1.0",
+  "module": "ATP",
+  "topic": "撤运",
+  "task_type": "triage",
+  "training_use": ["fact_qa", "case_qa", "structured_decision", "retrieval"],
+  "difficulty": "basic",
+  "applicable_phase": ["tactical_field_care", "tacevac"],
+  "core_question": "陆军 ATP 4-02.11 中伤员撤运分四类是什么",
+  "output_goal": "让模型输出 Urgent/Priority/Routine/RTD 四类的定义",
+  "applicable_scene": ["排连级现场分诊"],
+  "applicable_population": ["全部伤员"],
+  "preconditions": ["完成初步评估"],
+  "exclusions": ["不覆盖 MASCAL 颜色编码 (immediate/delayed/minimal/expectant)"],
+  "related_cards": ["TRIAGE-002", "TRIAGE-003", "PCC-MASCAL-001"],
+  "key_actions": [
+    {
+      "step": 1,
+      "action": "Urgent: 需 1 小时内后送以挽救生命/肢体/视力",
+      "priority": "immediate",
+      "condition": "立即危及生命",
+      "time_target": "≤1 小时",
+      "notes": "如失血休克未控、张力性气胸"
+    },
+    {
+      "step": 2,
+      "action": "Priority: 需 4 小时内后送防止恶化",
+      "priority": "high",
+      "condition": "暂稳定但快速恶化风险",
+      "time_target": "≤4 小时",
+      "notes": "如稳定的烧伤需补液"
+    },
+    {
+      "step": 3,
+      "action": "Routine: 24 小时内后送即可",
+      "priority": "routine",
+      "condition": "稳定无快速恶化风险",
+      "time_target": "≤24 小时",
+      "notes": "如简单四肢骨折"
+    },
+    {
+      "step": 4,
+      "action": "Return to Duty (RTD): 简单处置后即可归队",
+      "priority": "routine",
+      "condition": "轻伤无需后送",
+      "time_target": "现场处理后",
+      "notes": "陆军特有分类"
+    }
+  ],
+  "documentation_requirements": ["在 DD Form 1380 上记录分类", "持续报告至 Battalion S-1"],
+  "common_errors": [
+    "把 Urgent 与 immediate (颜色卡) 混淆",
+    "忽视 RTD 分类导致无关人员后送占资源"
+  ],
+  "evaluation_points": [
+    "是否提到 4 类 (Urgent/Priority/Routine/RTD)",
+    "是否提到 Urgent 1 小时窗",
+    "是否提到 Priority 4 小时",
+    "是否提到 Routine 24 小时"
+  ],
+  "source_refs": [
+    {
+      "source_id": "ATP-4-02.11",
+      "title": "Army Techniques Publication for Casualty Response, TCCC, and First Aid",
+      "version": "March 2026",
+      "section": "Chapter 1 Casualty Reporting",
+      "locator": "1-55, p.12",
+      "quote": "Casualties are taken to the CCP for classification of injury type (urgent, priority, routine, or return to duty), evacuation, and integration into the medical evacuation system."
+    }
+  ],
+  "evidence_level": "guideline",
+  "review_status": "draft",
+  "reviewers": [],
+  "created_at": "2026-05-16",
+  "updated_at": "2026-05-16",
+  "notes": "新增依据: ATP 1-55; 与 PCC MASCAL 颜色卡片互补"
+}

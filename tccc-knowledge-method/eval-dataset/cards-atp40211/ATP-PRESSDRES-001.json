@@ -1,0 +1,76 @@
+{
+  "card_id": "ATP-PRESSDRES-001",
+  "title": "加压敷料复评要点 (远端脉搏 / 皮肤温度 / 颜色)",
+  "version": "1.0",
+  "module": "ATP",
+  "topic": "循环",
+  "task_type": "reassessment",
+  "training_use": ["fact_qa", "retrieval"],
+  "difficulty": "basic",
+  "applicable_phase": ["tactical_field_care", "tacevac"],
+  "core_question": "加压敷料应用后必须如何复评",
+  "output_goal": "让模型输出 CLS 复评 4 项: 出血是否停止 / 远端脉搏 / 皮肤温度 / 颜色",
+  "applicable_scene": ["TFC 与 TACEVAC"],
+  "applicable_population": ["四肢加压敷料伤员"],
+  "preconditions": ["已应用加压敷料"],
+  "exclusions": ["不覆盖止血带复评 (见 HEM-018)"],
+  "related_cards": ["HEM-018"],
+  "key_actions": [
+    {
+      "step": 1,
+      "action": "复评是否仍有活动性出血",
+      "priority": "immediate",
+      "condition": "应用敷料后",
+      "time_target": "立即并周期性",
+      "notes": "出血未止则升级"
+    },
+    {
+      "step": 2,
+      "action": "触诊敷料远端脉搏",
+      "priority": "immediate",
+      "condition": "应用敷料后",
+      "time_target": "立即",
+      "notes": "脉搏消失提示包扎过紧"
+    },
+    {
+      "step": 3,
+      "action": "评估远端皮肤温度颜色,凉/紫/麻木提示血供受阻",
+      "priority": "immediate",
+      "condition": "应用敷料后",
+      "time_target": "立即",
+      "notes": "ATP §7-22"
+    }
+  ],
+  "decision_points": [
+    {
+      "condition": "远端脉搏消失或皮肤变冷/紫/麻木",
+      "next_action": "松开敷料并安全重新缠绕",
+      "rationale": "包扎过紧会致缺血",
+      "branch_type": "if_then"
+    }
+  ],
+  "reassessment_points": ["出血", "远端脉搏", "皮肤温度", "皮肤颜色"],
+  "common_errors": ["只看是否止血未查远端血供", "皮肤颜色变化误判"],
+  "evaluation_points": [
+    "是否提到复评 4 要点",
+    "是否提到远端脉搏",
+    "是否提到皮肤温度/颜色",
+    "是否提到包扎过紧应松开重缠"
+  ],
+  "source_refs": [
+    {
+      "source_id": "ATP-4-02.11",
+      "title": "Army Techniques Publication for Casualty Response, TCCC, and First Aid",
+      "version": "March 2026",
+      "section": "Chapter 7 Circulation Control",
+      "locator": "7-22, p.87",
+      "quote": "If the skin below the bandage is cool, bluish, numb, or if the distal pulse is absent, these may be signs that the bandage is applied too tightly."
+    }
+  ],
+  "evidence_level": "guideline",
+  "review_status": "draft",
+  "reviewers": [],
+  "created_at": "2026-05-16",
+  "updated_at": "2026-05-16",
+  "notes": "新增依据: ATP §7-22; 配套 TCCC HEM 卡片"
+}

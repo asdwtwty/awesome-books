@@ -1,0 +1,87 @@
+{
+  "card_id": "PCC-MASCAL-001",
+  "title": "PCC 环境下 MASCAL 资源管理与连续分诊",
+  "version": "1.0",
+  "module": "PCC",
+  "topic": "MASCAL/Triage",
+  "task_type": "triage",
+  "training_use": ["fact_qa", "case_qa", "structured_decision", "retrieval"],
+  "difficulty": "advanced",
+  "applicable_phase": ["prolonged_casualty_care"],
+  "core_question": "PCC 环境下的 MASCAL 与传统 MASCAL 在资源分配上有何不同",
+  "output_goal": "让模型输出 PCC MASCAL 的资源保守原则 + 连续分诊 + 战术指挥联合介入",
+  "applicable_scene": ["远程哨所", "撤运中断的偏远阵地"],
+  "applicable_population": ["多名战伤伤员同时存在"],
+  "preconditions": ["医疗资源补给受限", "短时间内无法后送"],
+  "exclusions": ["不覆盖固定医院 MASCAL 流程"],
+  "related_cards": ["PCC-PRIN-001", "PCC-COMM-001"],
+  "key_actions": [
+    {
+      "step": 1,
+      "action": "比传统 MASCAL 更保守地分配资源,优先保护稀缺资源 (如全血)",
+      "priority": "immediate",
+      "condition": "进入 MASCAL",
+      "time_target": "立即",
+      "notes": "PCC CPG 强调 'simpler is better'"
+    },
+    {
+      "step": 2,
+      "action": "把分诊视为持续过程,临床或战术条件改变时立即重做",
+      "priority": "high",
+      "condition": "整个 MASCAL 期间",
+      "time_target": "持续",
+      "notes": "Continuous re-triage"
+    },
+    {
+      "step": 3,
+      "action": "由最有经验的成员建立 MASCAL 角色与职责",
+      "priority": "immediate",
+      "condition": "MASCAL 启动",
+      "time_target": "立即",
+      "notes": "明确指挥链"
+    },
+    {
+      "step": 4,
+      "action": "战术指挥必须全程参与 MASCAL 响应",
+      "priority": "immediate",
+      "condition": "整个 MASCAL 期间",
+      "time_target": "持续",
+      "notes": "PCC CPG 第 4 条"
+    }
+  ],
+  "decision_points": [
+    {
+      "condition": "稀缺资源 (如低滴度 O 型全血) 储备紧张",
+      "next_action": "保留给最可能从中获益的伤员,而非平均分配",
+      "rationale": "PCC 资源不可指望持续补给",
+      "branch_type": "if_then"
+    }
+  ],
+  "common_errors": [
+    "按传统 MASCAL 思路分配资源",
+    "一次性分诊后不再复评",
+    "战术指挥被排除在医疗决策外"
+  ],
+  "evaluation_points": [
+    "是否提到 PCC MASCAL 资源更保守",
+    "是否提到分诊是连续过程",
+    "是否提到战术指挥必须参与",
+    "是否提到由最有经验者分配 MASCAL 角色"
+  ],
+  "source_refs": [
+    {
+      "source_id": "JTS-PCC-CPG-91",
+      "title": "Prolonged Casualty Care Guidelines",
+      "version": "CPG ID:91",
+      "section": "MASCAL/TRIAGE - PCC",
+      "locator": "p.9-10 Key Considerations",
+      "quote": "MASCAL in a PCC environment will necessitate more conservative resource allocation than traditional MASCAL... Triage is a continuous process and should be repeated as often as is clinically and operationally practical."
+    }
+  ],
+  "evidence_level": "guideline",
+  "review_status": "draft",
+  "reviewers": [],
+  "created_at": "2026-05-16",
+  "updated_at": "2026-05-16",
+  "notes": "新增依据: PCC CPG 增补 MASCAL 卡 (TCCC 卡片清单中未覆盖)"
+}

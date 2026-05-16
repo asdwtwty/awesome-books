@@ -1,0 +1,85 @@
+{
+  "card_id": "PCC-CIRC-001",
+  "title": "PCC 阶段循环复苏目标与休克分型",
+  "version": "1.0",
+  "module": "PCC",
+  "topic": "PCC 循环",
+  "task_type": "decision",
+  "training_use": ["fact_qa", "case_qa", "structured_decision", "retrieval"],
+  "difficulty": "advanced",
+  "applicable_phase": ["prolonged_casualty_care"],
+  "core_question": "PCC 阶段循环复苏的稳定目标是什么,如何分辨瞬时反应、不反应与难治性休克",
+  "output_goal": "让模型输出 PCC 复苏终点 (LOC 恢复, SBP 100-110) 与 3 类休克反应的鉴别",
+  "applicable_scene": ["PCC Role 1b/1c"],
+  "applicable_population": ["失血性休克战伤伤员"],
+  "preconditions": ["已建立 IV/IO 通路", "已开始血制品复苏"],
+  "exclusions": ["不覆盖 TCCC 阶段早期复苏目标"],
+  "related_cards": ["CIRC-001", "CIRC-007", "CIRC-013", "PCC-HEM-001"],
+  "trigger_conditions": ["进入 PCC 持续复苏阶段"],
+  "key_actions": [
+    {
+      "step": 1,
+      "action": "复苏目标: 意识水平恢复,SBP 稳定在 100-110 mmHg,生命体征稳定",
+      "priority": "immediate",
+      "condition": "PCC 整个复苏期间",
+      "time_target": "持续",
+      "notes": "PCC 比 TCCC 提高目标 SBP"
+    },
+    {
+      "step": 2,
+      "action": "持续判别 transient responder / non-responder / refractory shock 三类",
+      "priority": "high",
+      "condition": "Role 1b 及以上",
+      "time_target": "每次输血/输液后复评",
+      "notes": "CMC/CPP 必备技能"
+    },
+    {
+      "step": 3,
+      "action": "复评后申请血液 / 血浆 / 装备的再补给",
+      "priority": "high",
+      "condition": "复苏需求超过现有储备",
+      "time_target": "尽早",
+      "notes": "speedball 等非常规补给手段"
+    }
+  ],
+  "decision_points": [
+    {
+      "condition": "输血后短暂改善又恶化 (transient responder)",
+      "next_action": "排查持续出血源,继续输血并申请补给",
+      "rationale": "提示存在未控制的出血",
+      "branch_type": "if_then"
+    },
+    {
+      "condition": "输血后无任何改善 (non-responder)",
+      "next_action": "高度怀疑致命未控制的腹腔/胸腔/盆腔出血",
+      "rationale": "需要立即升级或后送",
+      "branch_type": "escalation"
+    }
+  ],
+  "endpoints": ["LOC 恢复", "SBP 100-110 mmHg 稳定", "尿量 ≥0.5 ml/kg/h"],
+  "common_errors": [
+    "用 TCCC 的 SBP 80-90 mmHg 目标管理 PCC",
+    "未区分 transient/non-responder 而盲目输液"
+  ],
+  "evaluation_points": [
+    "是否提到目标 SBP 100-110 mmHg",
+    "是否提到三类休克反应",
+    "是否提到尿量目标"
+  ],
+  "source_refs": [
+    {
+      "source_id": "JTS-PCC-CPG-91",
+      "title": "Prolonged Casualty Care Guidelines",
+      "version": "CPG ID:91",
+      "section": "CIRCULATION AND RESUSCITATION - PCC",
+      "locator": "p.17-19 Background, Table 5",
+      "quote": "The goals are a return to a normal level of consciousness (LOC), increase and stabilization of systolic blood pressure at 100-110 mm Hg... Differentiate between transient responder, non-responder, and refractory shock."
+    }
+  ],
+  "evidence_level": "guideline",
+  "review_status": "draft",
+  "reviewers": [],
+  "created_at": "2026-05-16",
+  "updated_at": "2026-05-16",
+  "notes": "新增依据: PCC CPG 增补; 与 TCCC CIRC-013 互补"
+}

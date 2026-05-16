@@ -1,0 +1,85 @@
+{
+  "card_id": "ATP-CCP-001",
+  "title": "伤员收容点 (CCP) 选址与建立标准",
+  "version": "1.0",
+  "module": "ATP",
+  "topic": "伤员收容点",
+  "task_type": "procedure",
+  "training_use": ["fact_qa", "case_qa", "retrieval"],
+  "difficulty": "intermediate",
+  "applicable_phase": ["tactical_field_care", "tacevac"],
+  "core_question": "如何选址和建立伤员收容点 (Casualty Collection Point, CCP)",
+  "output_goal": "让模型输出 CCP 必备的 6 项要素 + 选址原则",
+  "applicable_scene": ["排连级战场", "野外战术行动"],
+  "applicable_population": ["全部伤员"],
+  "preconditions": ["排级以上单位在战场行动中"],
+  "exclusions": ["不覆盖具体救治流程", "不覆盖航空后送"],
+  "related_cards": ["TRIAGE-001", "EVAC-001"],
+  "key_actions": [
+    {
+      "step": 1,
+      "action": "在排级单位 SOP 中预先规划 CCP 选址并演练",
+      "priority": "high",
+      "condition": "战术行动前",
+      "time_target": "事前",
+      "notes": "由首席士官或排长决定"
+    },
+    {
+      "step": 2,
+      "action": "CCP 必备 6 项: 昼夜标识系统 / 入出口分诊点 / 撤运分类标识 / KIA 区 / 医疗补给区 / HLZ",
+      "priority": "high",
+      "condition": "建立 CCP",
+      "time_target": "立即",
+      "notes": "ATP 1-28 项 6 个最低要素"
+    },
+    {
+      "step": 3,
+      "action": "用墙体或隔断按分诊类别分区,房间按颜色编码",
+      "priority": "high",
+      "condition": "建在建筑物内",
+      "time_target": "立即",
+      "notes": "提高监护可视性"
+    }
+  ],
+  "decision_points": [
+    {
+      "condition": "建在开阔地",
+      "next_action": "用刚性或杆式担架便于移动",
+      "rationale": "开阔地暴露大",
+      "branch_type": "if_then"
+    },
+    {
+      "condition": "建在建筑物内",
+      "next_action": "用最大房间,按治疗分类分别用不同房间",
+      "rationale": "降低监护盲区",
+      "branch_type": "if_then"
+    }
+  ],
+  "common_errors": [
+    "无 KIA 专门区致混淆",
+    "无 HLZ 难以快速后送",
+    "夜间无标识致 CCP 难定位"
+  ],
+  "evaluation_points": [
+    "是否提到 6 项必备要素",
+    "是否提到昼夜标识系统",
+    "是否提到 HLZ 必备",
+    "是否提到 KIA 单独区"
+  ],
+  "source_refs": [
+    {
+      "source_id": "ATP-4-02.11",
+      "title": "Army Techniques Publication for Casualty Response, TCCC, and First Aid",
+      "version": "March 2026",
+      "section": "Chapter 1 Casualty Collection Point Site Selection",
+      "locator": "1-28, p.7",
+      "quote": "The CCP should be established with: A day and night marking system; A triage point for entry into and exit from the CCP; Properly marked evacuation categories; A killed in action (KIA) area away from the other casualties; A medical resupply area; A helicopter landing zone (HLZ)."
+    }
+  ],
+  "evidence_level": "guideline",
+  "review_status": "draft",
+  "reviewers": [],
+  "created_at": "2026-05-16",
+  "updated_at": "2026-05-16",
+  "notes": "新增依据: ATP 4-02.11; TCCC 卡片清单未覆盖 CCP 建立"
+}

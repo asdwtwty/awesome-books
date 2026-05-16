@@ -1,0 +1,70 @@
+{
+  "card_id": "PCC-SPLINT-001",
+  "title": "PCC 阶段长时程夹板与担架填充的分级要求",
+  "version": "1.0",
+  "module": "PCC",
+  "topic": "PCC 骨折与长时程固定",
+  "task_type": "procedure",
+  "training_use": ["fact_qa", "retrieval"],
+  "difficulty": "basic",
+  "applicable_phase": ["prolonged_casualty_care"],
+  "core_question": "PCC 阶段对于担架填充和夹板的分级最低-更好-最佳标准是什么",
+  "output_goal": "让模型输出担架填充与夹板装备的分级 + 固定后必须复查脉搏",
+  "applicable_scene": ["PCC > 4 小时长程转运"],
+  "applicable_population": ["四肢骨折伤员"],
+  "preconditions": ["已识别骨折"],
+  "exclusions": ["不覆盖 TCCC 阶段初次夹板放置 (见 MSK-001~003)"],
+  "related_cards": ["MSK-001", "MSK-002", "MSK-003"],
+  "key_actions": [
+    {
+      "step": 1,
+      "action": "担架填充: minimum 多余军服; better 毛毯或睡垫; best 毛毯或军用睡垫",
+      "priority": "high",
+      "condition": "卧担架超过数小时",
+      "time_target": "立即",
+      "notes": "防压疮和长时不适"
+    },
+    {
+      "step": 2,
+      "action": "夹板: minimum 临时性 (木板/金属板); better/best 商品化 (SAM splint 等)",
+      "priority": "high",
+      "condition": "存在四肢骨折",
+      "time_target": "立即",
+      "notes": "PCC 长程更重视固定可靠性"
+    },
+    {
+      "step": 3,
+      "action": "夹板放置后必须复查全部远端脉搏",
+      "priority": "immediate",
+      "condition": "完成固定",
+      "time_target": "立即",
+      "notes": "与 MSK-002 衔接"
+    }
+  ],
+  "reassessment_points": ["远端脉搏", "皮肤温度颜色"],
+  "common_errors": [
+    "PCC 长程仍使用紧急临时夹板未升级",
+    "固定后未复查脉搏"
+  ],
+  "evaluation_points": [
+    "是否提到担架填充分级",
+    "是否提到 SAM splint",
+    "是否提到固定后复查脉搏"
+  ],
+  "source_refs": [
+    {
+      "source_id": "JTS-PCC-CPG-91",
+      "title": "Prolonged Casualty Care Guidelines",
+      "version": "CPG ID:91",
+      "section": "SPLINTING AND FRACTURE MANAGEMENT - PCC",
+      "locator": "p.46 Table 18",
+      "quote": "Litter Padding: Minimum - Excess uniforms or other textiles; Better/Best - Blankets or military sleep pad. Splint Placement: Minimum - Improvised splints; Better/Best - Commercial splinting device. Re-check all pulses after splint placement."
+    }
+  ],
+  "evidence_level": "guideline",
+  "review_status": "draft",
+  "reviewers": [],
+  "created_at": "2026-05-16",
+  "updated_at": "2026-05-16",
+  "notes": "新增依据: PCC CPG 长程固定;扩展 TCCC MSK"
+}

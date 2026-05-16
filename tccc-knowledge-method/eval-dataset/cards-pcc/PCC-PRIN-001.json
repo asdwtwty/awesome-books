@@ -1,0 +1,68 @@
+{
+  "card_id": "PCC-PRIN-001",
+  "title": "PCC 阶段总体目标与团队职责分配",
+  "version": "1.0",
+  "module": "PCC",
+  "topic": "PCC 原则与团队",
+  "task_type": "decision",
+  "training_use": ["fact_qa", "case_qa", "structured_decision", "retrieval"],
+  "difficulty": "basic",
+  "applicable_phase": ["prolonged_casualty_care"],
+  "core_question": "进入 PCC 阶段后,救护团队的总体目标是什么、如何分工",
+  "output_goal": "让模型输出 PCC 的核心目标 (尽快脱离 PCC) 与团队领队负责制",
+  "applicable_scene": ["远程或荒漠环境", "撤运能力或容量超限"],
+  "applicable_population": ["成人战伤伤员"],
+  "preconditions": ["TCCC 初救已完成", "短时间内无法后送至 Role 2/3"],
+  "exclusions": ["不覆盖具体处置步骤", "不覆盖 MASCAL 分诊细节"],
+  "related_cards": ["PCC-PRIN-002", "PCC-MASCAL-001"],
+  "trigger_conditions": ["撤运需求超过当前能力", "处于伤后 1-4 小时及以上"],
+  "key_actions": [
+    {
+      "step": 1,
+      "action": "继续按 TCCC 完成初步抢救并保持复苏",
+      "priority": "immediate",
+      "condition": "进入 PCC 阶段",
+      "time_target": "持续",
+      "notes": "PCC 的基础是 TCCC 熟练度"
+    },
+    {
+      "step": 2,
+      "action": "明确角色与责任,指定一名团队领队管理整体临床决策",
+      "priority": "immediate",
+      "condition": "至少 2 名以上施救者在场",
+      "time_target": "尽快",
+      "notes": "助手专注高强度任务"
+    },
+    {
+      "step": 3,
+      "action": "牢记 PCC 的首要目标是尽快脱离 PCC",
+      "priority": "high",
+      "condition": "整个 PCC 期间",
+      "time_target": "持续",
+      "notes": "原文: 'the primary goal in PCC is to get out of PCC'"
+    }
+  ],
+  "endpoints": ["伤员被后送", "进入更高一级救治"],
+  "common_errors": ["把 PCC 当作终点而非桥梁", "无人统筹指挥导致复苏混乱"],
+  "evaluation_points": [
+    "是否提到延续 TCCC 复苏",
+    "是否提到指定团队领队",
+    "是否提到首要目标是脱离 PCC"
+  ],
+  "source_refs": [
+    {
+      "source_id": "JTS-PCC-CPG-91",
+      "title": "Prolonged Casualty Care Guidelines",
+      "version": "CPG ID:91",
+      "section": "PCC PRINCIPLES",
+      "locator": "p.6-7 Steps 1-2",
+      "quote": "Perform initial lifesaving care using TCCC guidelines and continue resuscitation. Delineate roles and responsibilities, including naming a team leader."
+    }
+  ],
+  "evidence_level": "guideline",
+  "review_status": "draft",
+  "reviewers": [],
+  "created_at": "2026-05-16",
+  "updated_at": "2026-05-16",
+  "notes": "PCC 总纲第一卡; 新增依据: PCC CPG 增补"
+}

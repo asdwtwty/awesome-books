@@ -1,0 +1,78 @@
+{
+  "card_id": "ATP-BURN-001",
+  "title": "烧伤面积速估手法: 手掌 1% + 九分法",
+  "version": "1.0",
+  "module": "ATP",
+  "topic": "烧伤",
+  "task_type": "procedure",
+  "training_use": ["fact_qa", "case_qa", "retrieval"],
+  "difficulty": "basic",
+  "applicable_phase": ["tactical_field_care"],
+  "core_question": "战场如何快速估算烧伤面积",
+  "output_goal": "让模型输出手掌法 (≈1%) + Rule of Nines + 取整到 10% 的实操手法",
+  "applicable_scene": ["TFC 烧伤评估"],
+  "applicable_population": ["成人战伤伤员"],
+  "preconditions": ["明显烧伤"],
+  "exclusions": ["不覆盖儿童九分法变体"],
+  "related_cards": ["BURN-004", "BURN-007"],
+  "key_actions": [
+    {
+      "step": 1,
+      "action": "用伤员手掌作为 ≈1% TBSA 的估算尺度",
+      "priority": "high",
+      "condition": "小面积或散在烧伤",
+      "time_target": "立即",
+      "notes": "ATP §12-5 通用法"
+    },
+    {
+      "step": 2,
+      "action": "用 Rule of Nines 估算大面积,然后取整到最接近的 10%",
+      "priority": "high",
+      "condition": "大面积烧伤",
+      "time_target": "立即",
+      "notes": "战场快估,精度容差换速度"
+    },
+    {
+      "step": 3,
+      "action": "若仅前/后侧的一半受累,取该区域值的一半",
+      "priority": "high",
+      "condition": "半侧受累",
+      "time_target": "立即",
+      "notes": "举例: 半个躯干前侧 9%"
+    }
+  ],
+  "decision_points": [
+    {
+      "condition": "烧伤面积越大",
+      "next_action": "更强化低体温预防",
+      "rationale": "皮肤丧失加重热量丢失",
+      "branch_type": "escalation"
+    }
+  ],
+  "common_errors": [
+    "战场上追求精确 % 浪费时间",
+    "忽视半侧受累的折半计算"
+  ],
+  "evaluation_points": [
+    "是否提到手掌 ≈1%",
+    "是否提到 Rule of Nines",
+    "是否提到取整到最接近的 10%",
+    "是否提到面积越大越要防低体温"
+  ],
+  "source_refs": [
+    {
+      "source_id": "ATP-4-02.11",
+      "title": "Army Techniques Publication for Casualty Response, TCCC, and First Aid",
+      "version": "March 2026",
+      "section": "Chapter 12 Burns",
+      "locator": "12-5, p.117",
+      "quote": "the size of the casualty's palm of the hand represents approximately 1 percent of the burned area. When estimating, it is easiest to round up to the nearest 10 percent."
+    }
+  ],
+  "evidence_level": "guideline",
+  "review_status": "draft",
+  "reviewers": [],
+  "created_at": "2026-05-16",
+  "updated_at": "2026-05-16",
+  "notes": "新增依据: ATP §12-5; TCCC BURN-004 仅说 Rule of Nines 未给战场速估手掌法"
+}

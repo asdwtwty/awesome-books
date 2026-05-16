@@ -1,0 +1,87 @@
+{
+  "card_id": "PCC-HEAT-001",
+  "title": "PCC 阶段热射病与热衰竭的鉴别与处置",
+  "version": "1.0",
+  "module": "PCC",
+  "topic": "PCC 高温伤害",
+  "task_type": "decision",
+  "training_use": ["fact_qa", "case_qa", "retrieval"],
+  "difficulty": "intermediate",
+  "applicable_phase": ["prolonged_casualty_care"],
+  "core_question": "如何在 PCC 环境下区分热衰竭和热射病并分别处置",
+  "output_goal": "让模型输出热衰竭 vs 热射病鉴别 + 现场冷却 + 补液原则",
+  "applicable_scene": ["热带或沙漠环境的 PCC"],
+  "applicable_population": ["成人作战人员"],
+  "preconditions": ["伤员暴露于高温环境"],
+  "exclusions": ["不覆盖低体温处置 (见 HYP / PCC-HYP)"],
+  "related_cards": ["PCC-PRIN-002"],
+  "recognition_cues": [
+    "热衰竭: 虚弱、头晕、恶心、头痛、出汗,意识正常",
+    "热射病: 高热、无汗或汗液减少,意识改变 (核心区别)"
+  ],
+  "key_actions": [
+    {
+      "step": 1,
+      "action": "热衰竭: 补充水分和电解质 (口服或 IV/IO)",
+      "priority": "high",
+      "condition": "意识正常的高温暴露伤员",
+      "time_target": "立即",
+      "notes": "通常可恢复"
+    },
+    {
+      "step": 2,
+      "action": "热射病: 立即激进降温 + IV/IO 补液 + 紧急后送",
+      "priority": "immediate",
+      "condition": "高热 + 意识改变",
+      "time_target": "立即",
+      "notes": "热射病是急症,病死率高"
+    },
+    {
+      "step": 3,
+      "action": "无意识或呕吐者使用 IV/IO 补液,避免误吸",
+      "priority": "immediate",
+      "condition": "意识改变或呕吐",
+      "time_target": "立即",
+      "notes": "Role 1a 起即应执行"
+    }
+  ],
+  "decision_points": [
+    {
+      "condition": "意识正常 + 出汗 + 头晕恶心",
+      "next_action": "按热衰竭处置",
+      "rationale": "热衰竭可恢复",
+      "branch_type": "if_then"
+    },
+    {
+      "condition": "高热 + 意识改变 + 无汗",
+      "next_action": "按热射病紧急处置 + 后送",
+      "rationale": "热射病威胁生命",
+      "branch_type": "escalation"
+    }
+  ],
+  "common_errors": [
+    "把热射病误判为热衰竭延误降温",
+    "对无意识者口服补液造成误吸"
+  ],
+  "evaluation_points": [
+    "是否提到意识改变是热射病关键鉴别",
+    "是否提到立即激进降温",
+    "是否提到无意识者 IV/IO 补液"
+  ],
+  "source_refs": [
+    {
+      "source_id": "JTS-PCC-CPG-91",
+      "title": "Prolonged Casualty Care Guidelines",
+      "version": "CPG ID:91",
+      "section": "HYPERTHERMIA - PCC",
+      "locator": "p.24-25",
+      "quote": "Heat exhaustion: weak, dizzy, nauseated, headache, sweating, normal mental status... Heat stroke: Hyperpyrexia, altered mental status... If the casualty is unconscious or vomiting, use IV/IO fluids."
+    }
+  ],
+  "evidence_level": "guideline",
+  "review_status": "draft",
+  "reviewers": [],
+  "created_at": "2026-05-16",
+  "updated_at": "2026-05-16",
+  "notes": "新增依据: PCC CPG 高温伤害,TCCC 卡片清单未覆盖"
+}

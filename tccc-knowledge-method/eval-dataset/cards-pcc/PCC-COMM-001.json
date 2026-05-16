@@ -1,0 +1,86 @@
+{
+  "card_id": "PCC-COMM-001",
+  "title": "PCC 阶段远程会诊与文书 (DD Form 1380 + PCC Flowsheet)",
+  "version": "1.0",
+  "module": "PCC",
+  "topic": "PCC 通信文书",
+  "task_type": "documentation",
+  "training_use": ["fact_qa", "retrieval"],
+  "difficulty": "basic",
+  "applicable_phase": ["prolonged_casualty_care"],
+  "core_question": "PCC 阶段需要做哪些通信和文书工作",
+  "output_goal": "让模型输出与伤员/战术指挥/医疗后台的三类沟通要求 + 标准文书表",
+  "applicable_scene": ["所有 PCC 角色"],
+  "applicable_population": ["成人战伤伤员"],
+  "preconditions": ["伤员处于 PCC > 数小时"],
+  "exclusions": ["不覆盖 TACEVAC 现场交接"],
+  "related_cards": ["EVAC-004", "PCC-PRIN-002"],
+  "key_actions": [
+    {
+      "step": 1,
+      "action": "与伤员沟通: 鼓励、安抚、解释处置",
+      "priority": "high",
+      "condition": "伤员清醒",
+      "time_target": "持续",
+      "notes": "提高配合度,降低焦虑"
+    },
+    {
+      "step": 2,
+      "action": "与战术指挥沟通: 报告伤情、撤运需求、补给请求",
+      "priority": "immediate",
+      "condition": "PCC 启动",
+      "time_target": "尽快并持续",
+      "notes": "战术决策依赖此信息"
+    },
+    {
+      "step": 3,
+      "action": "发起 teleconsultation 远程会诊,使用预制脚本",
+      "priority": "high",
+      "condition": "通信条件允许",
+      "time_target": "尽早",
+      "notes": "teleconsultation 是 PCC 关键支撑"
+    },
+    {
+      "step": 4,
+      "action": "在 DD Form 1380 (TCCC 卡) 上记录全部干预,按 DHA-PI 6040.01 放置于伤员",
+      "priority": "high",
+      "condition": "整个 PCC 期间",
+      "time_target": "持续",
+      "notes": "卡片必须随伤员转运"
+    },
+    {
+      "step": 5,
+      "action": "在 PCC Flowsheet 上记录生命体征趋势、用药、出入量",
+      "priority": "high",
+      "condition": "Role 1b/1c",
+      "time_target": "每次复评后",
+      "notes": "PCC 专用流程表"
+    }
+  ],
+  "documentation_requirements": [
+    "DD Form 1380 TCCC Card",
+    "PCC Flowsheet"
+  ],
+  "evaluation_points": [
+    "是否提到三类沟通对象 (伤员/战术/医疗)",
+    "是否提到 teleconsultation 预制脚本",
+    "是否提到 DD Form 1380",
+    "是否提到 PCC Flowsheet"
+  ],
+  "source_refs": [
+    {
+      "source_id": "JTS-PCC-CPG-91",
+      "title": "Prolonged Casualty Care Guidelines",
+      "version": "CPG ID:91",
+      "section": "COMMUNICATION AND DOCUMENTATION - PCC",
+      "locator": "p.20-21 Table 6",
+      "quote": "Document casualty information on the DD Form 1380 TCCC Card and ensure proper placement of that card on the casualty, in accordance with DHA-PI 6040.01. Initiate scripted teleconsultation."
+    }
+  ],
+  "evidence_level": "guideline",
+  "review_status": "draft",
+  "reviewers": [],
+  "created_at": "2026-05-16",
+  "updated_at": "2026-05-16",
+  "notes": "新增依据: PCC CPG; 补充 TCCC EVAC-004 在 PCC 长程场景下的延伸"
+}

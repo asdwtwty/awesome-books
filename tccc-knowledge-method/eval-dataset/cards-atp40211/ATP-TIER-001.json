@@ -1,0 +1,90 @@
+{
+  "card_id": "ATP-TIER-001",
+  "title": "ATP 4-02.11 医疗梯次职责: All Service Members / CLS / Combat Medic",
+  "version": "1.0",
+  "module": "ATP",
+  "topic": "医疗梯次",
+  "task_type": "decision",
+  "training_use": ["fact_qa", "structured_decision", "retrieval"],
+  "difficulty": "basic",
+  "applicable_phase": ["care_under_threat", "tactical_field_care"],
+  "core_question": "ATP 4-02.11 中三类施救梯次 (全体兵员 / CLS / Combat Medic) 在 CUF 与 TFC 的具体职责是什么",
+  "output_goal": "让模型输出三梯次按 CUF/TFC 分阶段的职责清单",
+  "applicable_scene": ["野战行动 CUF/TFC"],
+  "applicable_population": ["陆军全员"],
+  "preconditions": ["战场环境"],
+  "exclusions": ["不覆盖 TACEVAC 阶段升级处置"],
+  "related_cards": ["PHASE-001", "PHASE-004"],
+  "key_actions": [
+    {
+      "step": 1,
+      "action": "全体兵员 (CUF): 确保现场安全 / 把伤员转移到掩体 / 识别并控制致命出血",
+      "priority": "immediate",
+      "condition": "CUF",
+      "time_target": "立即",
+      "notes": "ATP Table 1-1"
+    },
+    {
+      "step": 2,
+      "action": "全体兵员 (TFC): 快速伤员评估 / 按治疗规程处置 / 按单位 SOP 求助",
+      "priority": "immediate",
+      "condition": "TFC",
+      "time_target": "进入 TFC",
+      "notes": "受过基础急救训练即可"
+    },
+    {
+      "step": 3,
+      "action": "CLS (CUF): 压制敌火力 / 减少二次伤害 / 协助自助互助 / 维持安全和态势感知",
+      "priority": "immediate",
+      "condition": "CUF + CLS 在场",
+      "time_target": "立即",
+      "notes": "CLS 是非医务但接受过加强训练的士兵"
+    },
+    {
+      "step": 4,
+      "action": "CLS (TFC): 完成伤员评估 / 按规程处置 / 配合 Combat Medic",
+      "priority": "high",
+      "condition": "TFC",
+      "time_target": "持续",
+      "notes": "强化版基础急救"
+    },
+    {
+      "step": 5,
+      "action": "Combat Medic: 在 CUF 与 TFC 中执行 TCCC 五项关键救命技能",
+      "priority": "immediate",
+      "condition": "TFC 主救者",
+      "time_target": "全程",
+      "notes": "ATP §3-77 引用 CoTCCC 五项"
+    }
+  ],
+  "decision_points": [
+    {
+      "condition": "现场仅有非医务兵员",
+      "next_action": "执行 All Service Members 梯次任务,寻求 CLS/Medic 援助",
+      "rationale": "梯次决定可执行范围",
+      "branch_type": "if_then"
+    }
+  ],
+  "evaluation_points": [
+    "是否提到三梯次划分",
+    "是否提到全体兵员 CUF 三大任务",
+    "是否提到 CLS 在 CUF 中压制火力角色",
+    "是否提到 Combat Medic 是 TFC 主救者"
+  ],
+  "source_refs": [
+    {
+      "source_id": "ATP-4-02.11",
+      "title": "Army Techniques Publication for Casualty Response, TCCC, and First Aid",
+      "version": "March 2026",
+      "section": "Chapter 1 Medical Tier Responsibilities",
+      "locator": "Table 1-1, p.2",
+      "quote": "All Service Members - Care Under Fire: Ensure scene safety. Move the casualty to safety. Identify and control life-threatening bleeding. Combat Lifesaver - Care Under Fire: Suppress hostile fire to minimize the risk of injury to personnel."
+    }
+  ],
+  "evidence_level": "guideline",
+  "review_status": "draft",
+  "reviewers": [],
+  "created_at": "2026-05-16",
+  "updated_at": "2026-05-16",
+  "notes": "新增依据: ATP 4-02.11 Table 1-1; TCCC 不提供这种梯次详细分工"
+}

@@ -1,0 +1,92 @@
+{
+  "card_id": "PCC-HEM-001",
+  "title": "PCC 阶段大出血控制的角色分级要求 (TCCC-ASM 至 TCCC-CPP)",
+  "version": "1.0",
+  "module": "PCC",
+  "topic": "PCC 大出血",
+  "task_type": "decision",
+  "training_use": ["fact_qa", "case_qa", "structured_decision", "retrieval"],
+  "difficulty": "intermediate",
+  "applicable_phase": ["prolonged_casualty_care"],
+  "core_question": "PCC 阶段不同 TCCC 角色 (ASM/CLS/CMC/CPP) 在大出血控制上的递进任务是什么",
+  "output_goal": "让模型输出 PCC 4 级 TCCC 角色在大出血上的递进职责",
+  "applicable_scene": ["Role 1a/1b/1c PCC 环境"],
+  "applicable_population": ["成人战伤伤员"],
+  "preconditions": ["已完成 TCCC 大出血基础处置"],
+  "exclusions": ["不覆盖止血带操作细节 (见 HEM-001 至 HEM-005)"],
+  "related_cards": ["HEM-005", "HEM-019", "HEM-021"],
+  "trigger_conditions": ["处于 PCC 状态", "存在或曾经存在致命性出血"],
+  "key_actions": [
+    {
+      "step": 1,
+      "action": "All Personnel: 完成基础 TCCC 大出血处置",
+      "priority": "immediate",
+      "condition": "PCC 启动",
+      "time_target": "立即",
+      "notes": "前置基础"
+    },
+    {
+      "step": 2,
+      "action": "Role 1a (ASM/CLS): 重新识别撤离/拖动后可能新发的出血",
+      "priority": "high",
+      "condition": "Role 1a (<1 小时)",
+      "time_target": "持续",
+      "notes": "出血可能在转运中重启"
+    },
+    {
+      "step": 3,
+      "action": "Role 1b (CMC): 用超声 (eFAST/CVP) 评估容量与休克",
+      "priority": "high",
+      "condition": "Role 1b (1-4 小时), 设备可用",
+      "time_target": "尽早",
+      "notes": "区分低血容量 vs 难治性休克"
+    },
+    {
+      "step": 4,
+      "action": "Role 1c (CPP): 在可做血型测定时转换为同型血制品",
+      "priority": "high",
+      "condition": "Role 1c (>4 小时), 实验室可用",
+      "time_target": "条件允许时",
+      "notes": "保留低滴度 O 型全血给紧急情况"
+    },
+    {
+      "step": 5,
+      "action": "Role 1c (CPP): 留置 Foley 导尿管,目标尿量 >0.5 ml/kg/h",
+      "priority": "high",
+      "condition": "Role 1c",
+      "time_target": "尽早",
+      "notes": "尿量是 PCC 唯一稳定的器官灌注指标"
+    }
+  ],
+  "decision_points": [
+    {
+      "condition": "进入 Role 1b 且设备允许",
+      "next_action": "用 eFAST 确认/排除腹腔出血",
+      "rationale": "区分低血容量与难治性休克决定后续资源",
+      "branch_type": "escalation"
+    }
+  ],
+  "documentation_requirements": ["PCC Flowsheet 上记录所有干预", "持续记录尿量"],
+  "evaluation_points": [
+    "是否提到 Role 1a 重新评估出血",
+    "是否提到 Role 1b 用超声 + eFAST",
+    "是否提到 Role 1c 转换同型血",
+    "是否提到 Foley 尿量目标 >0.5 ml/kg/h"
+  ],
+  "source_refs": [
+    {
+      "source_id": "JTS-PCC-CPG-91",
+      "title": "Prolonged Casualty Care Guidelines",
+      "version": "CPG ID:91",
+      "section": "MASSIVE HEMORRHAGE - PCC",
+      "locator": "p.11-12 Table 2",
+      "quote": "Role 1a Re-assess all prior MARCH interventions. Role 1b Assess using ultrasound (if available) including Extended Focused Assessment with Sonography in Trauma. Role 1c Convert to type-specific blood replacement, if testing available. Establish Foley catheter with goal Urine Output (UOP) of > ½ ml/kg per hour."
+    }
+  ],
+  "evidence_level": "guideline",
+  "review_status": "draft",
+  "reviewers": [],
+  "created_at": "2026-05-16",
+  "updated_at": "2026-05-16",
+  "notes": "新增依据: PCC CPG 增补 (TCCC 卡片清单未覆盖角色分级)"
+}

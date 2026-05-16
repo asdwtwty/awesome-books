@@ -1,0 +1,87 @@
+{
+  "card_id": "PCC-SEPSIS-001",
+  "title": "PCC 阶段脓毒症识别与三档抗感染方案",
+  "version": "1.0",
+  "module": "PCC",
+  "topic": "PCC 抗生素与脓毒症",
+  "task_type": "decision",
+  "training_use": ["fact_qa", "case_qa", "structured_decision", "retrieval"],
+  "difficulty": "advanced",
+  "applicable_phase": ["prolonged_casualty_care"],
+  "core_question": "PCC 阶段的脓毒症如何识别并按 minimum/better/best 选择抗生素",
+  "output_goal": "让模型输出脓毒症 PCC 三档治疗方案 + 早期识别要点",
+  "applicable_scene": ["PCC > 12 小时的伤员", "未及时清创或包扎"],
+  "applicable_population": ["开放性创伤伤员"],
+  "preconditions": ["TCCC 抗生素首剂已给"],
+  "exclusions": ["不覆盖确定性外科清创"],
+  "related_cards": ["ABX-002", "ABX-003"],
+  "trigger_conditions": [
+    "钝伤或穿透伤后未及时治疗",
+    "新发发热、心率上升、低血压"
+  ],
+  "recognition_cues": [
+    "意识改变或精神状态变化",
+    "心率持续升高",
+    "低血压",
+    "发热或低体温"
+  ],
+  "key_actions": [
+    {
+      "step": 1,
+      "action": "Minimum: 莫西沙星 400 mg PO 每日",
+      "priority": "high",
+      "condition": "可口服 + 资源最少",
+      "time_target": "立即",
+      "notes": "TCCC 一线已用药者继续"
+    },
+    {
+      "step": 2,
+      "action": "Better: 厄他培南 1 g IV/IO 每 24 小时,或头孢曲松 2 g IV/IO 每 24 小时",
+      "priority": "high",
+      "condition": "无法口服或更高资源",
+      "time_target": "立即",
+      "notes": "覆盖革兰阴性 + 厌氧"
+    },
+    {
+      "step": 3,
+      "action": "Best: 头孢曲松 2 g IV/IO Q24h + 万古霉素 1.5 mg/kg IV/IO Q12h + 甲硝唑 500 mg Q8h",
+      "priority": "high",
+      "condition": "Role 1c + 严重脓毒症",
+      "time_target": "立即",
+      "notes": "三联广覆盖,需考虑过敏与肾功能"
+    }
+  ],
+  "decision_points": [
+    {
+      "condition": "确认或高度怀疑脓毒症",
+      "next_action": "按当前可用资源选择 minimum/better/best 之一",
+      "rationale": "PCC 资源决定方案选择",
+      "branch_type": "if_then"
+    }
+  ],
+  "common_errors": [
+    "等待发热出现才考虑脓毒症",
+    "只用 TCCC 首剂不升级"
+  ],
+  "evaluation_points": [
+    "是否提到三档方案 (minimum/better/best)",
+    "是否提到莫西沙星 / 厄他培南 / 头孢曲松剂量",
+    "是否提到早期识别征象"
+  ],
+  "source_refs": [
+    {
+      "source_id": "JTS-PCC-CPG-91",
+      "title": "Prolonged Casualty Care Guidelines",
+      "version": "CPG ID:91",
+      "section": "ANTIBIOTICS, SEPSIS, AND OTHER DRUGS - PCC",
+      "locator": "p.40 Table 14",
+      "quote": "Minimum - Moxifloxacin 400 mg PO daily; Better - Ertapenem 1 gram IV/IO every 24 hours OR ceftriaxone 2 grams IV/IO every 24 hrs; Best - ceftriaxone 2 grams IV/IO every 24 hrs., PLUS vancomycin 1.5 mg/kg IV/IO every 12 hours, PLUS metronidazole 500 mg IV/PO/IO every 8 hours."
+    }
+  ],
+  "evidence_level": "guideline",
+  "review_status": "draft",
+  "reviewers": [],
+  "created_at": "2026-05-16",
+  "updated_at": "2026-05-16",
+  "notes": "新增依据: PCC CPG; TCCC ABX 卡片不覆盖脓毒症升级"
+}

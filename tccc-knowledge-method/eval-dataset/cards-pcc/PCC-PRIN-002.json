@@ -1,0 +1,68 @@
+{
+  "card_id": "PCC-PRIN-002",
+  "title": "PCC 全身体格检查与生命体征趋势记录",
+  "version": "1.0",
+  "module": "PCC",
+  "topic": "PCC 原则与团队",
+  "task_type": "procedure",
+  "training_use": ["fact_qa", "case_qa", "structured_decision", "retrieval"],
+  "difficulty": "intermediate",
+  "applicable_phase": ["prolonged_casualty_care"],
+  "core_question": "PCC 阶段如何完成详细体检和生命体征趋势化记录",
+  "output_goal": "让模型输出 PCC 的标准化检查 + 持续趋势化",
+  "applicable_scene": ["Role 1a-1c PCC 现场"],
+  "applicable_population": ["成人战伤伤员"],
+  "preconditions": ["伤员已初步稳定"],
+  "exclusions": ["不覆盖具体器官处置"],
+  "related_cards": ["PCC-PRIN-001", "PCC-COMM-001"],
+  "key_actions": [
+    {
+      "step": 1,
+      "action": "完成详细头到脚体检 + 完整问诊,形成 problem list 与 care plan",
+      "priority": "high",
+      "condition": "首次稳定后",
+      "time_target": "尽快",
+      "notes": "PCC CPG 第 3 步"
+    },
+    {
+      "step": 2,
+      "action": "建立专用趋势表,从最早一组生命体征开始记录,定期复测",
+      "priority": "immediate",
+      "condition": "整个 PCC 期间",
+      "time_target": "1-2 小时一次",
+      "notes": "稳定后可延长至 4 小时"
+    },
+    {
+      "step": 3,
+      "action": "尽快发起 teleconsultation (远程会诊),按预制模板汇报",
+      "priority": "high",
+      "condition": "通信条件允许",
+      "time_target": "尽早",
+      "notes": "PCC CPG 第 5 步"
+    }
+  ],
+  "reassessment_points": ["心率 / 呼吸 / SpO2 / 血压 / 体温 / AVPU"],
+  "documentation_requirements": ["PCC Flowsheet", "趋势化生命体征图表"],
+  "evaluation_points": [
+    "是否提到完整体检 + 病史",
+    "是否提到问题清单与照护计划",
+    "是否提到生命体征趋势化记录",
+    "是否提到尽早 teleconsultation"
+  ],
+  "source_refs": [
+    {
+      "source_id": "JTS-PCC-CPG-91",
+      "title": "Prolonged Casualty Care Guidelines",
+      "version": "CPG ID:91",
+      "section": "PCC PRINCIPLES",
+      "locator": "p.7 Steps 3-5",
+      "quote": "Perform comprehensive physical exam and detailed history with problem list and care plan. Record and trend vital signs."
+    }
+  ],
+  "evidence_level": "guideline",
+  "review_status": "draft",
+  "reviewers": [],
+  "created_at": "2026-05-16",
+  "updated_at": "2026-05-16",
+  "notes": "PCC 监测原则,新增依据: PCC CPG 增补"
+}

@@ -1,0 +1,68 @@
+{
+  "card_id": "PCC-HYP-001",
+  "title": "PCC 阶段长时程低体温预防 (>10 小时加温毯更换)",
+  "version": "1.0",
+  "module": "PCC",
+  "topic": "PCC 低体温",
+  "task_type": "procedure",
+  "training_use": ["fact_qa", "retrieval"],
+  "difficulty": "basic",
+  "applicable_phase": ["prolonged_casualty_care"],
+  "core_question": "PCC 阶段长时程低体温预防与 TCCC 阶段的关键差别是什么",
+  "output_goal": "让模型输出 ready-heat-blanket 使用 >10 小时需更换 + 持续保温的延伸要求",
+  "applicable_scene": ["Role 1c PCC > 4 小时"],
+  "applicable_population": ["成人战伤伤员"],
+  "preconditions": ["TCCC 阶段已启动低体温预防"],
+  "exclusions": ["不覆盖 TCCC 阶段初始保温步骤 (见 HYP-001 至 HYP-009)"],
+  "related_cards": ["HYP-004", "HYP-005"],
+  "key_actions": [
+    {
+      "step": 1,
+      "action": "Role 1c: 持续/重启 1a 与 1b 的所有保温措施",
+      "priority": "high",
+      "condition": "进入 Role 1c",
+      "time_target": "持续",
+      "notes": "确保前置措施仍在位"
+    },
+    {
+      "step": 2,
+      "action": "ready-heat-blanket 使用超过 10 小时时更换",
+      "priority": "high",
+      "condition": "已使用 ≥10 小时",
+      "time_target": "10 小时整点",
+      "notes": "化学加温毯有效时长上限"
+    },
+    {
+      "step": 3,
+      "action": "在撤运平台上保护伤员避免风雨暴露",
+      "priority": "high",
+      "condition": "Role 1b 撤运平台",
+      "time_target": "持续",
+      "notes": "对流和蒸发会持续耗热"
+    }
+  ],
+  "common_errors": [
+    "误以为 ready-heat-blanket 可一直用",
+    "撤运平台上忽视风雨暴露"
+  ],
+  "evaluation_points": [
+    "是否提到 ready-heat-blanket >10 小时需更换",
+    "是否提到撤运平台上防风雨"
+  ],
+  "source_refs": [
+    {
+      "source_id": "JTS-PCC-CPG-91",
+      "title": "Prolonged Casualty Care Guidelines",
+      "version": "CPG ID:91",
+      "section": "HYPOTHERMIA - PCC",
+      "locator": "p.22-23",
+      "quote": "Role 1c Continue and/or initiate the Role 1a/Role 1b phases as detailed above. Replace ready-heat-blanket when using >10 hours."
+    }
+  ],
+  "evidence_level": "guideline",
+  "review_status": "draft",
+  "reviewers": [],
+  "created_at": "2026-05-16",
+  "updated_at": "2026-05-16",
+  "notes": "新增依据: PCC CPG 长时程化措施 (TCCC HYP-001~009 不覆盖 >10 小时)"
+}

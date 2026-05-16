@@ -1,0 +1,83 @@
+{
+  "card_id": "ATP-CHESTSEAL-001",
+  "title": "胸部贯通伤多个伤口的处置原则",
+  "version": "1.0",
+  "module": "ATP",
+  "topic": "呼吸",
+  "task_type": "decision",
+  "training_use": ["fact_qa", "case_qa", "retrieval"],
+  "difficulty": "intermediate",
+  "applicable_phase": ["tactical_field_care"],
+  "core_question": "发现多个开放性胸壁伤口时如何处置",
+  "output_goal": "让模型输出'发现一个就立即处理一个'+ 张力性气胸恶化时的 burp 路径",
+  "applicable_scene": ["TFC 胸部贯通伤"],
+  "applicable_population": ["成人战伤伤员"],
+  "preconditions": ["已确认开放性胸壁伤"],
+  "exclusions": ["不覆盖针刺减压具体技术"],
+  "related_cards": ["RESP-013", "RESP-015"],
+  "key_actions": [
+    {
+      "step": 1,
+      "action": "发现一个开放胸伤立即用胸封覆盖,不等所有伤口暴露",
+      "priority": "immediate",
+      "condition": "首次发现开放胸伤",
+      "time_target": "立即",
+      "notes": "ATP §6-26"
+    },
+    {
+      "step": 2,
+      "action": "不能确定伤口是否贯穿胸壁时,按开放胸伤同等处理",
+      "priority": "immediate",
+      "condition": "贯穿不确定",
+      "time_target": "立即",
+      "notes": "保守原则"
+    },
+    {
+      "step": 3,
+      "action": "贴胸封后伤员恶化,先 burp (放气) 或临时移除敷料",
+      "priority": "immediate",
+      "condition": "贴胸封后症状加重",
+      "time_target": "立即",
+      "notes": "怀疑张力性气胸"
+    }
+  ],
+  "decision_points": [
+    {
+      "condition": "贯穿性不确定",
+      "next_action": "按开放胸伤处理",
+      "rationale": "宁可保守不可漏诊",
+      "branch_type": "if_then"
+    },
+    {
+      "condition": "胸封后伤员恶化",
+      "next_action": "Burp 胸封,必要时针刺减压",
+      "rationale": "张力性气胸进展",
+      "branch_type": "escalation"
+    }
+  ],
+  "common_errors": [
+    "全部伤口找完才处理",
+    "胸封后忽略恶化征象"
+  ],
+  "evaluation_points": [
+    "是否提到一个发现一个处理一个",
+    "是否提到不确定时按开放胸伤处理",
+    "是否提到 burp 或临时移除"
+  ],
+  "source_refs": [
+    {
+      "source_id": "ATP-4-02.11",
+      "title": "Army Techniques Publication for Casualty Response, TCCC, and First Aid",
+      "version": "March 2026",
+      "section": "Chapter 6 Respiration and Breathing Control",
+      "locator": "6-26, p.77",
+      "quote": "If unsure that the wound has penetrated the chest wall completely, treat the wound as though it were an open chest wound. If multiple wounds are found, treat as soon as they are discovered."
+    }
+  ],
+  "evidence_level": "guideline",
+  "review_status": "draft",
+  "reviewers": [],
+  "created_at": "2026-05-16",
+  "updated_at": "2026-05-16",
+  "notes": "新增依据: ATP §6-26; TCCC RESP-013 不覆盖多个伤口和不确定贯穿"
+}

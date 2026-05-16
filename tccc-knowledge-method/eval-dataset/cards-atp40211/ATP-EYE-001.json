@@ -1,0 +1,81 @@
+{
+  "card_id": "ATP-EYE-001",
+  "title": "眼外伤分型: 眼睑切割 / 眼球切割 / 强光烧伤识别",
+  "version": "1.0",
+  "module": "ATP",
+  "topic": "眼外伤",
+  "task_type": "recognition",
+  "training_use": ["fact_qa", "case_qa", "retrieval"],
+  "difficulty": "basic",
+  "applicable_phase": ["tactical_field_care"],
+  "core_question": "如何区分眼睑切割、眼球切割与强光烧伤这三类眼外伤",
+  "output_goal": "让模型输出三类眼外伤的识别要点 + 视力影响差异",
+  "applicable_scene": ["战术现场"],
+  "applicable_population": ["成人战伤伤员"],
+  "preconditions": ["眼周明显外伤"],
+  "exclusions": ["不覆盖具体眼罩放置 (见 EYE-002)"],
+  "related_cards": ["EYE-001", "EYE-002", "EYE-003"],
+  "recognition_cues": [
+    "眼睑切割: 看似严重但不累及眼球时通常视力不受影响",
+    "眼球切割: 可造成永久损伤或失明",
+    "强光烧伤: 红外线/日蚀光/激光暴露后",
+    "视力突然下降伴疼痛"
+  ],
+  "key_actions": [
+    {
+      "step": 1,
+      "action": "评估视力 (能否数手指 / 看见光线方向)",
+      "priority": "immediate",
+      "condition": "怀疑眼外伤",
+      "time_target": "立即",
+      "notes": "决定后送优先级"
+    },
+    {
+      "step": 2,
+      "action": "区分三类: 仅眼睑伤 / 累及眼球 / 强光暴露",
+      "priority": "immediate",
+      "condition": "完成视力评估",
+      "time_target": "立即",
+      "notes": "三类处置不同"
+    }
+  ],
+  "decision_points": [
+    {
+      "condition": "怀疑眼球切割或穿通",
+      "next_action": "硬质眼罩保护并紧急后送",
+      "rationale": "视力可永久丧失",
+      "branch_type": "escalation"
+    },
+    {
+      "condition": "仅眼睑伤未累及眼球",
+      "next_action": "敷料覆盖,继续按 MARCH 处置",
+      "rationale": "视力通常不受影响",
+      "branch_type": "if_then"
+    }
+  ],
+  "common_errors": [
+    "把仅眼睑切割视为视力威胁",
+    "忽略激光暴露伤"
+  ],
+  "evaluation_points": [
+    "是否提到三类区分",
+    "是否提到先评估视力",
+    "是否提到激光/日蚀强光暴露"
+  ],
+  "source_refs": [
+    {
+      "source_id": "ATP-4-02.11",
+      "title": "Army Techniques Publication for Casualty Response, TCCC, and First Aid",
+      "version": "March 2026",
+      "section": "Chapter 10 Eye Trauma",
+      "locator": "10-1 to 10-2, p.97",
+      "quote": "Cuts of the eyelids can appear to be very serious, but if the eyeball is not involved, a person's vision usually will not be damaged. However, lacerations (cuts) of the eyeball can cause permanent damage or loss of sight."
+    }
+  ],
+  "evidence_level": "guideline",
+  "review_status": "draft",
+  "reviewers": [],
+  "created_at": "2026-05-16",
+  "updated_at": "2026-05-16",
+  "notes": "新增依据: ATP Chapter 10; TCCC EYE 模块仅 4 张未覆盖分型识别"
+}

@@ -1,0 +1,5 @@
+# build artifacts
+eval-dataset/cards-dist/
+eval-dataset/tccc-zip-unpacked/
+__pycache__/
+*.pyc
