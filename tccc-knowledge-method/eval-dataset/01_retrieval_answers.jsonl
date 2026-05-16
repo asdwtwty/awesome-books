@@ -1,0 +1,50 @@
+{"qid":"R001","reference_answer":"火线下救护(CUF)阶段以战术为先:返还火力并寻求掩护;若伤员有作战能力应继续作战或自助移动;不能行动时把伤员拖到掩体后再救治;此时不评估气道、不输液,仅在能止血时上止血带。","key_claims":["返还火力","利用掩体","伤员有能力时继续作战","只做大出血控制","其他评估推迟"],"required_evidence":["TCCC_2026 §CUF.1-5"]}
+{"qid":"R002","reference_answer":"用 CoTCCC 推荐型止血带,直接绑在皮肤上,距出血点近端 5-7cm(2-3 英寸),收紧到出血停止且远端搏动消失;一根不行就并排再上一根。","key_claims":["CoTCCC 推荐型","直接贴皮肤","近端 5-7cm","收紧至搏动消失","并排第二根"],"required_evidence":["TCCC_2026 §TFC.3.a"]}
+{"qid":"R003","reference_answer":"距离出血点近端 5-7cm(2-3 英寸);不要紧贴伤口,也不要在关节上方。","key_claims":["近端 5-7cm","不在关节上方","不紧贴伤口"],"required_evidence":["TCCC_2026 §TFC.3.a"]}
+{"qid":"R004","reference_answer":"在第一根止血带的旁边并排再上一根(注意是并排不是叠放),进一步加压。仍无效则改伤口填塞+加压包扎。","key_claims":["并排第二根","不是叠放","仍无效转伤口填塞"],"required_evidence":["TCCC_2026 §TFC.3.a"]}
+{"qid":"R005","reference_answer":"必须直接绑在皮肤上,不要隔衣物。隔衣物会导致受力不均、容易松脱、且无法准确判断收紧程度。","key_claims":["直接贴皮肤","不隔衣物","受力均匀"],"required_evidence":["TCCC_2026 §TFC.3.a"]}
+{"qid":"R006","reference_answer":"创伤性截肢直接上止血带,无论是否还有活动性出血;残端单根或并排双根止血带,记录时间。","key_claims":["直接上止血带","无须先评估出血","可能需要双根","记录时间"],"required_evidence":["TCCC_2026 §TFC.3.a"]}
+{"qid":"R007","reference_answer":"在位 ≥2 小时应考虑转换;同时需满足三条:伤员不在休克、能监护伤口、不是用于截肢残端。","key_claims":["≥2 小时考虑转换","不在休克","可监测出血","非截肢残端"],"required_evidence":["TCCC_2026 §Circulation.a.3"]}
+{"qid":"R008","reference_answer":"不行。在位 >6 小时且无监护、无实验室条件时禁止解除,只能维持到上级救治机构。","key_claims":[">6h 不得解除","需监护与实验室","只能维持"],"required_evidence":["TCCC_2026 §Circulation.a.3"]}
+{"qid":"R009","reference_answer":"必须记录三个时间:首次应用、转换、解除;记录在止血带本体和 TCCC 伤员卡(DD Form 1380)上,用永久性记号笔。","key_claims":["三个时间(应用/转换/解除)","记录在止血带和伤员卡","永久记号笔"],"required_evidence":["TCCC_2026 §Circulation.a.4"]}
+{"qid":"R010","reference_answer":"昏迷伤员置于复苏体位、头后仰、下颌远离胸部;必要时放鼻咽通气管,但若有颅底骨折征象禁用 NPA。","key_claims":["复苏体位","头后仰","下颌离胸","必要时 NPA","颅底骨折禁 NPA"],"required_evidence":["TCCC_2026 §Airway.4.d"]}
+{"qid":"R011","reference_answer":"让伤员采取最能保护气道的姿势,包括坐起或前倾,不要强制其平卧。","key_claims":["允许坐起","允许前倾","最舒适体位","不强制平卧"],"required_evidence":["TCCC_2026 §Airway.4.c"]}
+{"qid":"R012","reference_answer":"行外科环甲膜切开术。前述措施失败、面部毁伤无法管理气道时使用。","key_claims":["环甲膜切开","面部毁伤","前述措施失败"],"required_evidence":["TCCC_2026 §Airway.4.f"]}
+{"qid":"R013","reference_answer":"用带翼带气囊的导管,外径 <10mm、内径 6-7mm、气管内长度 5-8cm;两种技术:Bougie 辅助开放术或标准开放术。","key_claims":["外径<10mm","内径 6-7mm","气管内长度 5-8cm","带翼带气囊","Bougie 或标准技术"],"required_evidence":["TCCC_2026 §Airway.4.f.1-2"]}
+{"qid":"R014","reference_answer":"患侧第 5 肋间锁骨中线 AAL 或第 2 肋间 MCL;若用前部 MCL 不要刺向乳头线内侧。","key_claims":["第 5 肋间 AAL","第 2 肋间 MCL","不入乳头线内侧"],"required_evidence":["TCCC_2026 §Respiration.a.2"]}
+{"qid":"R015","reference_answer":"14G 或 10G,3.25 英寸长,垂直胸壁刚过下肋上缘刺入,完全到根部并固定 5-10 秒。","key_claims":["14G 或 10G","3.25 英寸","垂直胸壁","下肋上缘","固定 5-10 秒"],"required_evidence":["TCCC_2026 §Respiration.a.2.4"]}
+{"qid":"R016","reference_answer":"在原位用新针重做一次;仍无效则进入循环处置流程。穿透性躯干伤+创伤性心脏停搏者直接双侧穿刺。","key_claims":["原位重做","用新针","仍无效进入循环处置","创伤性心脏停搏双侧穿刺"],"required_evidence":["TCCC_2026 §Respiration.a.2.5-6"]}
+{"qid":"R017","reference_answer":"立即贴排气式胸封覆盖伤口;无排气式时用非排气式;之后监测有无张力性气胸进展。","key_claims":["立即贴胸封","优先排气式","无排气式可用非排气式","监测张力性气胸"],"required_evidence":["TCCC_2026 §Respiration.b"]}
+{"qid":"R018","reference_answer":"先 burp(放气)或揭开胸封;仍不缓解则在患侧针刺减压。","key_claims":["先 burp 胸封","仍不缓解针刺减压","持续监测"],"required_evidence":["TCCC_2026 §Respiration.b"]}
+{"qid":"R019","reference_answer":"维持 SpO2 ≥92%;有氧时供氧;低于阈值时考虑 NPA + 1000ml 球囊面罩辅助通气。","key_claims":["SpO2 ≥92%","供氧","NPA + BVM 辅助通气"],"required_evidence":["TCCC_2026 §Respiration.c-d"]}
+{"qid":"R020","reference_answer":"靠两个体征:意识改变(在排除脑外伤前提下)+桡动脉搏动减弱或消失;无需血压计也能完成判断。","key_claims":["意识改变","排除 TBI","桡脉减弱/消失","无需血压计"],"required_evidence":["TCCC_2026 §Circulation.b"]}
+{"qid":"R021","reference_answer":"按优先级:①冷藏低滴度 O 型全血 ②预筛选低滴度 O 型新鲜全血 ③1:1:1 血浆+RBC+血小板 ④1:1 血浆+RBC ⑤单独血浆或 RBC。","key_claims":["冷藏低滴度 O 型全血优先","次选预筛选新鲜全血","成分血 1:1:1","成分血 1:1","越接近全血越好"],"required_evidence":["TCCC_2026 §Circulation.c.2"]}
+{"qid":"R022","reference_answer":"输任一血制品后立即给 1g 钙(30ml 10% 葡萄糖酸钙或 10ml 10% 氯化钙)IV/IO,缓慢推注。","key_claims":["输血后立即补钙","1g 总量","葡萄糖酸钙 30ml 10% 或氯化钙 10ml 10%","IV/IO 缓推"],"required_evidence":["TCCC_2026 §Circulation.c.4.8"]}
+{"qid":"R023","reference_answer":"目标:可触及桡动脉搏动、意识改善或 SBP 100mmHg(无血压计时仅看前两条);达到任一即停止。","key_claims":["桡脉可触及","意识改善","SBP 100mmHg","达任一即停"],"required_evidence":["TCCC_2026 §Circulation.c.4.6-7"]}
+{"qid":"R024","reference_answer":"出血性休克或预计进展休克且 IV 难以快速建立(2 次失败或现场条件差)时改 IO;部位:近端肱骨/胫骨/胸骨;速率类似 IV,可加压输注。","key_claims":["出血性休克","IV 失败 2 次","常用部位 肱骨/胫骨/胸骨","加压输注"],"required_evidence":["TCCC_2026 §Circulation.c"]}
+{"qid":"R025","reference_answer":"钝伤+休克、高能机制+骨盆不稳、怀疑骨盆出血、双下肢截肢爆震伤。位置:大转子水平,而非髂嵴。仅用商业化骨盆带。","key_claims":["钝伤+休克","高能机制+骨盆不稳","双下肢截肢","大转子水平","商业化骨盆带"],"required_evidence":["TCCC_2026 §Circulation.a"]}
+{"qid":"R026","reference_answer":"出血性休克或预计需输血者:首剂 1g IV/IO 缓推 ≥10 分钟;受伤 3 小时内效益最大,>3h 后效益降低;后续 1g 8 小时输注。","key_claims":["首剂 1g IV/IO","缓推 ≥10min","3 小时内","后续 1g 8h 输注"],"required_evidence":["TCCC_2026 §Circulation.d"]}
+{"qid":"R027","reference_answer":"立即脱湿衣、用 HPMK 或干燥被毯包裹(含头部)、输液加温、隔绝地面、持续监测体温。即使夏天也要预防。","key_claims":["脱湿衣","HPMK 包裹","输液加温","隔绝地面","持续测温","夏天也要防"],"required_evidence":["TCCC_2026 §Hypothermia"]}
+{"qid":"R028","reference_answer":"轻度疼痛能继续作战:OTFC(芬太尼透粘膜)+对乙酰氨基酚 1000mg PO+酮咯酸 15mg PO;不用吗啡。","key_claims":["OTFC","对乙酰氨基酚 1000mg PO","酮咯酸 15mg PO","不用吗啡"],"required_evidence":["TCCC_2026 §Pain Management"]}
+{"qid":"R029","reference_answer":"中重度疼痛但意识清:首选氯胺酮 IV/IM 或经鼻芬太尼;处于休克或呼吸抑制风险者谨慎;TBI 禁用吗啡。","key_claims":["氯胺酮 IV/IM 首选","经鼻芬太尼","休克谨慎","TBI 禁吗啡"],"required_evidence":["TCCC_2026 §Pain Management"]}
+{"qid":"R030","reference_answer":"穿透伤(GSW、爆震、开放骨折等)需预防性抗生素:首选莫西沙星 400mg PO(意识清),次选厄他培南 1g IV/IM;受伤 3 小时内最佳。","key_claims":["穿透伤需抗生素","莫西沙星 400mg PO","厄他培南 1g IV/IM","3 小时内"],"required_evidence":["TCCC_2026 §Antibiotics"]}
+{"qid":"R031","reference_answer":"≥20% TBSA 烧伤需复苏。Rule of 10s:首小时液体 mL = 10 × %TBSA(40-80kg 体重内有效);按尿量 0.5-1 ml/kg/h 调整。","key_claims":["≥20% TBSA","Rule of 10s","首小时 10×%TBSA","目标尿量 0.5-1 ml/kg/h"],"required_evidence":["TCCC_2026 §Burns"]}
+{"qid":"R032","reference_answer":"是。面颈烧伤、嗅毛烧焦、咽喉黏膜烧伤、声音嘶哑、含碳痰均提示气道烧伤,应早期建立确定性气道(可能需环甲膜切开)。","key_claims":["面颈烧伤早期保护气道","嗅毛烧焦","声音嘶哑","含碳痰","必要时环甲膜切开"],"required_evidence":["TCCC_2026 §Burns"]}
+{"qid":"R033","reference_answer":"用刚性眼罩(eye shield)保护,不要用软敷料压;给予预防性抗生素;尽快后送眼科。","key_claims":["刚性眼罩","不用软敷料压迫","预防性抗生素","后送眼科"],"required_evidence":["TCCC_2026 §Eye Trauma"]}
+{"qid":"R034","reference_answer":"在 DD Form 1380 上用 24 小时制记录三个时间:止血带应用、转换、解除;同时也用永久性记号笔写在止血带本体上。","key_claims":["DD Form 1380","24 小时制","三个时间(应用/转换/解除)","止血带本体上也写"],"required_evidence":["TCCC_2026 §Documentation"]}
+{"qid":"R035","reference_answer":"M-A-R-C-H:Massive hemorrhage(大出血)→Airway(气道)→Respiration(呼吸)→Circulation(循环)→Head/Hypothermia(头部伤/低体温);后续 P-A-W-S:Pain(疼痛)→Antibiotics(抗生素)→Wound(伤口)→Splinting(夹板固定)。","key_claims":["MARCH 顺序","大出血优先","PAWS 后续","完整 9 步"],"required_evidence":["TCCC_2026 §TFC Overview"]}
+{"qid":"R036","reference_answer":"TACEVAC 可使用更多设备(监护仪、辅助通气)、更广泛的处置(气道升级、复苏目标更高)、连续监测;TFC 受战术约束,处置更精简。","key_claims":["TACEVAC 设备更全","TACEVAC 处置更广","连续监测","TFC 战术约束"],"required_evidence":["TCCC_2026 §TACEVAC"]}
+{"qid":"R037","reference_answer":"当伤员无法在标准黄金时间(伤后 60 分钟、TCCC 完成后 2 小时内)送达 Role 2/3 救治时触发 PCC,通常持续数小时到数十小时。","key_claims":["无法按时后送","数小时到数十小时","触发 PCC"],"required_evidence":["PCC_CPG Background"]}
+{"qid":"R038","reference_answer":"首次评估后 1-2 小时一次完整 MARCH-PAWS 评估;伤员稳定后可延长至 4 小时一次。","key_claims":["1-2 小时一次","稳定后 4 小时","完整 MARCH-PAWS"],"required_evidence":["PCC_CPG Reassessment"]}
+{"qid":"R039","reference_answer":"留置导尿或量瓶接尿;目标 0.5-1 ml/kg/h(成人 ≥30 ml/h);<20 ml/h 提示低灌注或休克进展。","key_claims":["留置导尿","目标 0.5-1 ml/kg/h","<20 ml/h 报警"],"required_evidence":["PCC_CPG Monitoring"]}
+{"qid":"R040","reference_answer":"每 2 小时翻身;骨突部位垫衬;保持皮肤干燥;尤其注意骶尾、足跟、肘部;有条件时用减压敷料。","key_claims":["2 小时翻身","骨突部位垫衬","皮肤干燥","重点部位:骶尾/足跟/肘部"],"required_evidence":["PCC_CPG Skin Care"]}
+{"qid":"R041","reference_answer":"按 immediate→delayed→minimal→expectant 四级分诊,先红后黄、再绿、最后黑;资源极度有限时改为效益最大化优先。","key_claims":["四级分诊","Immediate 红","Delayed 黄","Minimal 绿","Expectant 黑","效益最大化"],"required_evidence":["PCC_CPG MASCAL"]}
+{"qid":"R042","reference_answer":"Expectant(黑标)指资源极度有限下救治效益极低、生还可能性极小的伤员,予以舒适处理但不优先抢救。","key_claims":["生还可能性极小","救治效益低","舒适处理","不优先抢救"],"required_evidence":["PCC_CPG Triage"]}
+{"qid":"R043","reference_answer":"优先冷藏低滴度 O 型全血,因为单一制品可同时补充携氧、凝血和容量,接近 1:1:1 但更稳定。","key_claims":["全血优先","原因:三合一","低滴度 O 型","比成分血更稳定"],"required_evidence":["TCCC_2026 §Circulation.c.2"]}
+{"qid":"R044","reference_answer":"Care Under Fire/Threat (CUF,火线下/威胁下救护)→Tactical Field Care (TFC,战术现场救护)→Tactical Evacuation Care (TACEVAC,战术后送救护)。","key_claims":["CUF","TFC","TACEVAC","顺序固定"],"required_evidence":["TCCC_2026 Overview"]}
+{"qid":"R045","reference_answer":"不可以。吗啡的呼吸抑制和瞳孔评估干扰会掩盖 TBI 病情进展;TBI 伤员选择氯胺酮或经鼻芬太尼。","key_claims":["TBI 禁吗啡","原因:呼吸抑制+瞳孔干扰","替代:氯胺酮/芬太尼"],"required_evidence":["TCCC_2026 §Pain Management"]}
+{"qid":"R046","reference_answer":"由 CoTCCC(Committee on Tactical Combat Casualty Care)经实证评估推荐的型号,需满足:战场可单手操作、可贴皮肤、可靠止血、有定量记录;具体型号见 TCCC Equipment List 最新版。","key_claims":["CoTCCC 评估","单手操作","可贴皮肤","可靠止血","见 Equipment List"],"required_evidence":["TCCC_2026 §Equipment"]}
+{"qid":"R047","reference_answer":"先排除可逆原因(休克、低氧、TBI、低血糖等);若需镇静以保证转运安全,优先用氯胺酮;切勿用吗啡。","key_claims":["排除可逆原因","氯胺酮镇静","不用吗啡","转运安全"],"required_evidence":["TCCC_2026 §Pain Management"]}
+{"qid":"R048","reference_answer":"无意识或半昏迷伤员气道无法保持时使用;使用前必须排除颅底骨折征(raccoon eyes、battle sign、CSF 漏)。","key_claims":["无意识保气道","使用前排除颅底骨折","raccoon eyes","battle sign","CSF 漏"],"required_evidence":["TCCC_2026 §Airway"]}
+{"qid":"R049","reference_answer":"挤压伤后高钾血症、肌红蛋白尿、酸中毒风险高(再灌注综合征)。解除止血带前必须:建立 IV/IO、备好钙剂、监护下解除、能监测电解质;无监护和实验室时禁止解除。","key_claims":["再灌注综合征","建立 IV/IO","钙剂","监护下解除","实验室监测","无条件禁止解除"],"required_evidence":["PCC_CPG Crush Injury"]}
+{"qid":"R050","reference_answer":"Combat Medic 是 TFC 阶段(战术现场救护)的主要施救者;在 CUF 阶段战术优先,在 TACEVAC 阶段则与更高级人员配合。","key_claims":["Combat Medic 主战 TFC","CUF 战术优先","TACEVAC 配合上级"],"required_evidence":["ATP_4-02.11 Chapter 2"]}
