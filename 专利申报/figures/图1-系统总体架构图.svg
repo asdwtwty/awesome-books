@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 720" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Noto Sans CJK SC',sans-serif" font-size="14" fill="#000" stroke="#000">
+  <style>
+    .box { fill:#fff; stroke:#000; stroke-width:1.5; }
+    .box-title { font-weight:bold; text-anchor:middle; }
+    .label { text-anchor:middle; }
+    .arrow { fill:none; stroke:#000; stroke-width:1.5; marker-end:url(#arrow); }
+    .dash  { fill:none; stroke:#000; stroke-width:1.2; stroke-dasharray:5,4; marker-end:url(#arrow); }
+    .layer { fill:none; stroke:#000; stroke-width:1.2; stroke-dasharray:2,3; }
+  </style>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#000"/>
+    </marker>
+  </defs>
+
+  <text x="500" y="28" class="box-title" font-size="18">图 1  本发明系统总体架构图</text>
+
+  <!-- 用户输入 -->
+  <rect class="box" x="60"  y="70"  width="160" height="50" rx="6"/>
+  <text class="box-title" x="140" y="100">用户查询</text>
+
+  <!-- 调用编排模块 -->
+  <rect class="box" x="280" y="70"  width="640" height="50" rx="6"/>
+  <text class="box-title" x="600" y="100">调用编排模块（Orchestrator）</text>
+
+  <line class="arrow" x1="220" y1="95" x2="278" y2="95"/>
+
+  <!-- 第二层：检索/关系/规则/LLM -->
+  <g>
+    <rect class="box" x="280" y="160" width="140" height="70" rx="6"/>
+    <text class="box-title" x="350" y="190">索引与检索模块</text>
+    <text class="label"     x="350" y="210">BM25 / 稠密 / 元数据</text>
+
+    <rect class="box" x="450" y="160" width="140" height="70" rx="6"/>
+    <text class="box-title" x="520" y="190">关系层模块</text>
+    <text class="label"     x="520" y="210">六类轻量关系</text>
+
+    <rect class="box" x="620" y="160" width="140" height="70" rx="6"/>
+    <text class="box-title" x="690" y="190">规则层模块</text>
+    <text class="label"     x="690" y="210">三级安全约束</text>
+
+    <rect class="box" x="790" y="160" width="130" height="70" rx="6"/>
+    <text class="box-title" x="855" y="190">大语言模型</text>
+    <text class="label"     x="855" y="210">(LLM)</text>
+  </g>
+
+  <line class="arrow" x1="380" y1="120" x2="350" y2="158"/>
+  <line class="arrow" x1="500" y1="120" x2="520" y2="158"/>
+  <line class="arrow" x1="650" y1="120" x2="690" y2="158"/>
+  <line class="arrow" x1="820" y1="120" x2="855" y2="158"/>
+
+  <!-- 第三层：知识仓储 + 格式转换 -->
+  <rect class="box" x="280" y="290" width="290" height="90" rx="6"/>
+  <text class="box-title" x="425" y="318">知识仓储模块</text>
+  <rect class="box" x="300" y="328" width="120" height="38" rx="4" fill="#f7f7f7"/>
+  <text class="label"     x="360" y="352">Markdown+YAML</text>
+  <text class="label"     x="360" y="338" font-size="11">源格式</text>
+  <rect class="box" x="430" y="328" width="120" height="38" rx="4" fill="#f7f7f7"/>
+  <text class="label"     x="490" y="352">JSONL</text>
+  <text class="label"     x="490" y="338" font-size="11">发布格式</text>
+
+  <rect class="box" x="600" y="290" width="170" height="90" rx="6"/>
+  <text class="box-title" x="685" y="320">格式转换模块</text>
+  <text class="label"     x="685" y="345">字段/术语/引用/</text>
+  <text class="label"     x="685" y="362">受控词表 校验</text>
+
+  <line class="arrow" x1="570" y1="335" x2="598" y2="335"/>
+  <line class="arrow" x1="600" y1="350" x2="572" y2="350" />
+
+  <!-- 索引模块 ↔ 知识仓储 -->
+  <line class="arrow" x1="350" y1="232" x2="350" y2="288"/>
+  <line class="arrow" x1="685" y1="232" x2="685" y2="288"/>
+
+  <!-- 关系层 ↔ 仓储 -->
+  <line class="dash" x1="520" y1="232" x2="520" y2="288"/>
+
+  <!-- 调用编排↔LLM 双向 -->
+  <line class="arrow" x1="855" y1="120" x2="855" y2="158"/>
+  <line class="arrow" x1="820" y1="230" x2="820" y2="270"/>
+
+  <!-- 结果输出 -->
+  <rect class="box" x="60" y="500" width="160" height="50" rx="6"/>
+  <text class="box-title" x="140" y="530">回答输出</text>
+
+  <line class="arrow" x1="500" y1="380" x2="220" y2="525"/>
+
+  <!-- 可观测层模块（右侧贯穿） -->
+  <rect class="box" x="800" y="380" width="160" height="220" rx="6" fill="#f9f9f9"/>
+  <text class="box-title" x="880" y="408">可观测层模块</text>
+  <text class="label"     x="880" y="438">trace_id 追踪</text>
+  <text class="label"     x="880" y="460">来源卡片记录</text>
+  <text class="label"     x="880" y="482">关系扩展路径</text>
+  <text class="label"     x="880" y="504">触发规则清单</text>
+  <text class="label"     x="880" y="526">分步执行日志</text>
+  <text class="label"     x="880" y="558">支持完整重放与</text>
+  <text class="label"     x="880" y="580">证据追溯</text>
+
+  <line class="dash" x1="600" y1="120" x2="800" y2="430"/>
+  <line class="dash" x1="690" y1="230" x2="800" y2="460"/>
+  <line class="dash" x1="685" y1="380" x2="800" y2="490"/>
+
+  <!-- 知识维护人员入口 -->
+  <rect class="box" x="60" y="290" width="160" height="50" rx="6"/>
+  <text class="box-title" x="140" y="320">医学专家维护</text>
+  <line class="arrow" x1="220" y1="315" x2="278" y2="335"/>
+
+  <!-- 三层框 -->
+  <rect class="layer" x="40"  y="58"  width="940" height="70"/>
+  <text x="50" y="55" font-size="11">输入层</text>
+  <rect class="layer" x="270" y="148" width="660" height="92"/>
+  <text x="280" y="145" font-size="11">检索 / 关系 / 规则 / 生成 层</text>
+  <rect class="layer" x="270" y="278" width="510" height="112"/>
+  <text x="280" y="275" font-size="11">知识层（双表示）</text>
+  <rect class="layer" x="40"  y="490" width="200" height="72"/>
+  <text x="50" y="487" font-size="11">输出层</text>
+</svg>
