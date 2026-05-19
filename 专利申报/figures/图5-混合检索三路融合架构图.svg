@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 740" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Noto Sans CJK SC',sans-serif" font-size="13" fill="#000" stroke="#000">
+  <style>
+    .box   { fill:#fff; stroke:#000; stroke-width:1.5; }
+    .src   { fill:#f7f7f7; stroke:#000; stroke-width:1.5; }
+    .fuse  { fill:#fff; stroke:#000; stroke-width:1.5; }
+    .title { font-weight:bold; text-anchor:middle; }
+    .label { text-anchor:middle; }
+    .arrow { fill:none; stroke:#000; stroke-width:1.5; marker-end:url(#arr5); }
+    .feed  { fill:none; stroke:#000; stroke-width:1.2; stroke-dasharray:5,4; marker-end:url(#arr5); }
+  </style>
+  <defs>
+    <marker id="arr5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#000"/>
+    </marker>
+  </defs>
+
+  <text x="550" y="28" class="title" font-size="18">图 5  混合检索三路融合架构图</text>
+
+  <!-- 输入查询 -->
+  <ellipse class="box" cx="550" cy="80" rx="100" ry="32"/>
+  <text class="title" x="550" y="78">用户查询</text>
+  <text class="label" x="550" y="96" font-size="11">（含意图 / 实体 / 场景）</text>
+
+  <!-- 三路并行处理 -->
+  <!-- 路 1 元数据过滤 -->
+  <rect class="box" x="70" y="170" width="280" height="130" rx="8"/>
+  <text class="title" x="210" y="196">路 1：元数据过滤检索</text>
+  <line x1="90" y1="208" x2="330" y2="208" stroke-width="0.7"/>
+  <text class="label" x="210" y="232" font-size="12">scenario.phase / type /</text>
+  <text class="label" x="210" y="252" font-size="12">severity / role 等</text>
+  <text class="label" x="210" y="278" font-size="12">→ meta_match_score</text>
+
+  <!-- 路 2 BM25 -->
+  <rect class="box" x="410" y="170" width="280" height="130" rx="8"/>
+  <text class="title" x="550" y="196">路 2：BM25 稀疏检索</text>
+  <line x1="430" y1="208" x2="670" y2="208" stroke-width="0.7"/>
+  <text class="label" x="550" y="232" font-size="12">倒排索引 / 词项匹配</text>
+  <text class="label" x="550" y="252" font-size="12">医学缩写：TQ、NPA、IO、EtCO₂</text>
+  <text class="label" x="550" y="278" font-size="12">→ bm25_score</text>
+
+  <!-- 路 3 稠密 -->
+  <rect class="box" x="750" y="170" width="280" height="130" rx="8"/>
+  <text class="title" x="890" y="196">路 3：向量稠密检索</text>
+  <line x1="770" y1="208" x2="1010" y2="208" stroke-width="0.7"/>
+  <text class="label" x="890" y="232" font-size="12">multilingual-e5-base 编码</text>
+  <text class="label" x="890" y="252" font-size="12">语义相似 / 自然语言症状</text>
+  <text class="label" x="890" y="278" font-size="12">→ dense_score</text>
+
+  <line class="arrow" x1="500" y1="112" x2="240" y2="168"/>
+  <line class="arrow" x1="550" y1="112" x2="550" y2="168"/>
+  <line class="arrow" x1="600" y1="112" x2="860" y2="168"/>
+
+  <!-- 知识库（共享数据源） -->
+  <rect class="src" x="280" y="350" width="540" height="80" rx="8"/>
+  <text class="title" x="550" y="378">知识卡片库（JSONL 发布格式）</text>
+  <text class="label" x="550" y="402" font-size="12">结构化字段 + 正文 + 元数据 + 嵌入向量引用</text>
+  <text class="label" x="550" y="420" font-size="11">embedding_ref → 稠密向量库</text>
+
+  <line class="feed" x1="210" y1="300" x2="320" y2="350"/>
+  <line class="feed" x1="550" y1="300" x2="550" y2="350"/>
+  <line class="feed" x1="890" y1="300" x2="780" y2="350"/>
+
+  <!-- 融合公式块 -->
+  <rect class="fuse" x="240" y="490" width="620" height="100" rx="8" fill="#f0f0f0"/>
+  <text class="title" x="550" y="518" font-size="15">三路得分加权融合（Score Fusion）</text>
+  <text class="label" x="550" y="548" font-size="14">final_score = α × bm25_score + β × dense_score + γ × meta_match_score</text>
+  <text class="label" x="550" y="572" font-size="12">α、β、γ 为可配置权重（默认 0.5 / 0.4 / 0.1，支持评测消融）</text>
+
+  <line class="arrow" x1="210" y1="300" x2="430" y2="488"/>
+  <line class="arrow" x1="550" y1="300" x2="550" y2="488"/>
+  <line class="arrow" x1="890" y1="300" x2="670" y2="488"/>
+
+  <!-- 候选集排序输出 -->
+  <rect class="box" x="380" y="640" width="340" height="60" rx="8"/>
+  <text class="title" x="550" y="666">候选卡片集（按 final_score 降序）</text>
+  <text class="label" x="550" y="686" font-size="12">→ 关系层扩展 / 规则层过滤 / 上下文编排</text>
+  <line class="arrow" x1="550" y1="590" x2="550" y2="638"/>
+
+  <!-- 旁注：可配置 -->
+  <rect class="box" x="60" y="490" width="160" height="100" rx="8" fill="#f9f9f9"/>
+  <text class="title" x="140" y="514">配置文件</text>
+  <text class="label" x="140" y="538" font-size="12">α / β / γ 权重</text>
+  <text class="label" x="140" y="558" font-size="12">召回 top_k</text>
+  <text class="label" x="140" y="578" font-size="12">是否启用元数据过滤</text>
+  <line class="feed" x1="220" y1="540" x2="240" y2="540"/>
+
+  <!-- 评测旁注 -->
+  <rect class="box" x="880" y="490" width="160" height="100" rx="8" fill="#f9f9f9"/>
+  <text class="title" x="960" y="514">评测/消融</text>
+  <text class="label" x="960" y="538" font-size="12">单路 / 双路 / 三路</text>
+  <text class="label" x="960" y="558" font-size="12">权重消融实验</text>
+  <text class="label" x="960" y="578" font-size="12">指标：MRR / nDCG</text>
+  <line class="feed" x1="880" y1="540" x2="860" y2="540"/>
+</svg>

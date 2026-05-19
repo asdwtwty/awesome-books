@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 720" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Noto Sans CJK SC',sans-serif" font-size="13" fill="#000" stroke="#000">
+  <style>
+    .box   { fill:#fff; stroke:#000; stroke-width:1.5; }
+    .rule  { fill:#f0f0f0; stroke:#000; stroke-width:1.5; }
+    .verdict{ fill:#fff; stroke:#000; stroke-width:1.5; }
+    .title { font-weight:bold; text-anchor:middle; }
+    .label { text-anchor:middle; }
+    .arrow { fill:none; stroke:#000; stroke-width:1.5; marker-end:url(#arr4); }
+    .feed  { fill:none; stroke:#000; stroke-width:1.2; stroke-dasharray:5,4; marker-end:url(#arr4); }
+  </style>
+  <defs>
+    <marker id="arr4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#000"/>
+    </marker>
+  </defs>
+
+  <text x="550" y="28" class="title" font-size="18">图 4  安全约束规则层三阶段执行示意图</text>
+
+  <!-- 主流水线背景 -->
+  <line x1="60" y1="180" x2="1040" y2="180" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="60" y="172" font-size="11">调用链时间轴</text>
+
+  <!-- 输入 -->
+  <ellipse class="box" cx="120" cy="180" rx="60" ry="28"/>
+  <text class="title" x="120" y="184">用户查询</text>
+
+  <!-- 三阶段 -->
+  <!-- 阶段一 -->
+  <rect class="rule" x="220" y="120" width="220" height="120" rx="8"/>
+  <text class="title" x="330" y="146">第一阶段</text>
+  <text class="label" x="330" y="166">检索前预筛</text>
+  <line x1="240" y1="178" x2="420" y2="178" stroke-width="0.7"/>
+  <text class="label" x="330" y="198" font-size="12">输入：查询上下文</text>
+  <text class="label" x="330" y="218" font-size="12">动作：拦截 / 改写</text>
+
+  <line class="arrow" x1="180" y1="180" x2="218" y2="180"/>
+
+  <!-- 检索 -->
+  <rect class="box" x="460" y="148" width="120" height="64" rx="8"/>
+  <text class="title" x="520" y="172">混合检索</text>
+  <text class="label" x="520" y="194" font-size="12">候选卡片集</text>
+  <line class="arrow" x1="440" y1="180" x2="458" y2="180"/>
+
+  <!-- 阶段二 -->
+  <rect class="rule" x="600" y="120" width="220" height="120" rx="8"/>
+  <text class="title" x="710" y="146">第二阶段</text>
+  <text class="label" x="710" y="166">检索后过滤</text>
+  <line x1="620" y1="178" x2="800" y2="178" stroke-width="0.7"/>
+  <text class="label" x="710" y="198" font-size="12">输入：上下文+候选集</text>
+  <text class="label" x="710" y="218" font-size="12">动作：移除冲突 / 注入警示</text>
+  <line class="arrow" x1="580" y1="180" x2="598" y2="180"/>
+
+  <!-- LLM -->
+  <rect class="box" x="840" y="148" width="120" height="64" rx="8"/>
+  <text class="title" x="900" y="172">大语言模型</text>
+  <text class="label" x="900" y="194" font-size="12">生成回答</text>
+  <line class="arrow" x1="820" y1="180" x2="838" y2="180"/>
+
+  <!-- 阶段三（位于下方） -->
+  <rect class="rule" x="600" y="320" width="220" height="120" rx="8"/>
+  <text class="title" x="710" y="346">第三阶段</text>
+  <text class="label" x="710" y="366">生成后复核</text>
+  <line x1="620" y1="378" x2="800" y2="378" stroke-width="0.7"/>
+  <text class="label" x="710" y="398" font-size="12">输入：上下文+模型输出</text>
+  <text class="label" x="710" y="418" font-size="12">动作：红旗检测 / 最终拦截</text>
+  <line class="arrow" x1="900" y1="212" x2="820" y2="370"/>
+
+  <!-- 输出 -->
+  <ellipse class="box" cx="980" cy="380" rx="60" ry="28"/>
+  <text class="title" x="980" y="384">回答输出</text>
+  <line class="arrow" x1="820" y1="380" x2="920" y2="380"/>
+
+  <!-- 规则库（统一来源） -->
+  <rect class="box" x="320" y="500" width="460" height="160" rx="8" fill="#f9f9f9"/>
+  <text class="title" x="550" y="528" font-size="15">独立规则层（外置化）</text>
+  <line x1="340" y1="540" x2="760" y2="540" stroke-width="0.7"/>
+  <rect class="box" x="340" y="552" width="130" height="92" rx="6"/>
+  <text class="title" x="405" y="574">全局刚性约束</text>
+  <text class="label" x="405" y="596" font-size="12">绝对阻断</text>
+  <text class="label" x="405" y="614" font-size="11">hard_stop</text>
+  <text class="label" x="405" y="632" font-size="11">证据 + 优先级</text>
+
+  <rect class="box" x="485" y="552" width="130" height="92" rx="6"/>
+  <text class="title" x="550" y="574">场景条件约束</text>
+  <text class="label" x="550" y="596" font-size="12">强制警示</text>
+  <text class="label" x="550" y="614" font-size="11">warning</text>
+  <text class="label" x="550" y="632" font-size="11">触发条件 DSL</text>
+
+  <rect class="box" x="630" y="552" width="130" height="92" rx="6"/>
+  <text class="title" x="695" y="574">知识关联约束</text>
+  <text class="label" x="695" y="596" font-size="12">建议提示</text>
+  <text class="label" x="695" y="614" font-size="11">advisory</text>
+  <text class="label" x="695" y="632" font-size="11">结合卡片关系</text>
+
+  <line class="feed" x1="550" y1="500" x2="330" y2="240"/>
+  <line class="feed" x1="550" y1="500" x2="710" y2="240"/>
+  <line class="feed" x1="550" y1="500" x2="710" y2="320"/>
+
+  <!-- Verdict 结构（统一） -->
+  <rect class="verdict" x="60" y="500" width="240" height="160" rx="8"/>
+  <text class="title" x="180" y="528" font-size="15">统一裁决结构 Verdict</text>
+  <line x1="80" y1="540" x2="280" y2="540" stroke-width="0.7"/>
+  <text class="label" x="180" y="562" font-size="12">verdict: allow / warn / block</text>
+  <text class="label" x="180" y="582" font-size="12">reasons[ rule_id, severity, msg ]</text>
+  <text class="label" x="180" y="602" font-size="12">evidence_ids[ ... ]</text>
+  <text class="label" x="180" y="622" font-size="12">mutated_context: add / drop</text>
+  <text class="label" x="180" y="648" font-size="11">hard_stop &gt; warning &gt; advisory</text>
+
+  <line class="feed" x1="300" y1="540" x2="320" y2="540"/>
+
+  <!-- 阶段输出 verdict -->
+  <line class="feed" x1="330" y1="240" x2="180" y2="500"/>
+  <line class="feed" x1="710" y1="240" x2="180" y2="500"/>
+  <line class="feed" x1="710" y1="440" x2="180" y2="500"/>
+
+  <!-- 图例 -->
+  <g>
+    <rect class="rule" x="820" y="500" width="20" height="14"/>
+    <text x="850" y="512" font-size="12">规则层执行点</text>
+    <rect class="box"  x="820" y="525" width="20" height="14"/>
+    <text x="850" y="537" font-size="12">非规则步骤</text>
+    <line class="feed" x1="820" y1="557" x2="860" y2="557"/>
+    <text x="870" y="562" font-size="12">规则/裁决依赖</text>
+  </g>
+</svg>
